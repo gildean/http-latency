@@ -1,0 +1,31 @@
+{
+  "name": "http-latency",
+  "version": "0.1.1",
+  "author": "Olli K <olli@salaliitto.com>",
+  "description": "Check if a site is up and how long did the request take",
+  "keywords": [
+    "http",
+    "latency",
+    "check"
+  ],
+  "preferGlobal": "true",
+  "bin": {
+    "http-latency": "./http-latency"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/gildean/http-latency.git"
+  },
+  "contributors": [
+    {
+      "name": "Olli K",
+      "email": "olli@salaliitto.com"
+    }
+  ],
+  "engines": {
+    "node": ">=0.6.x"
+  },
+  "dependencies": {
+    "request": "~2.x.x"
+  }
+}

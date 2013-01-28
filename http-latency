@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+var request = require('request'),
+    requestedUrl = process.argv[2],
+    startTime = Date.now();
+if (!requestedUrl) {
+    console.log('Provide a working url to check');
+    process.exit();
+} else {
+    var req = request(requestedUrl, function (error, response, body) {
+        var endTime = Date.now();
+        console.log('Request for ' + process.argv[2] + ' took: ' + (endTime - startTime) + 'ms');
+        if (!error && response.statusCode === 200) {
+            console.log('Page loaded successfully!');
+        } else if (!error) {
+            console.log('Failure with statuscode: ' + response.statusCode);
+        } else {
+            console.log('Failed to load the page with url ' + requestedUrl);
+            console.log(error);
+        }
+    });
+}
